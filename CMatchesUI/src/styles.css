@@ -1,0 +1,54 @@
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+ */
+
+/* html, body {height: 100%; width: 100vw; overflow-x: hidden} */
+html, body {height: 100%;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-form-field-appearance-outline .mat-form-field-outline-thick {
+  color: #9c1148;
+}
+
+@media(max-width:575px){
+   .mat-button {
+     font-size: 0.9em !important;
+   }
+   .example-card {
+     width: 62vw !important;
+   }
+
+   .image {
+    width: 44vw !important;
+   }
+
+   .mat-card {
+     height: 43vh !important;
+     width: 52vw !important;
+     margin-bottom: 10vh !important;
+   }
+
+   .my-form{
+     width: 41vw !important;
+   }
+
+   .mat-card-actions .mat-button, .mat-card-actions .mat-raised-button {
+     margin: 4px 8px !important;
+   }
+
+   .mat-menu-item {
+     font-size: 0.9em !important;
+   }
+
+   .mat-form-field.field{
+     padding-left: 10vh !important;
+   }
+   
+}
+
+@media(max-width:576px) and (max-width: 768px) {
+
+  /* .mat-card {
+    height: 50vh !important;
+    width: 55vw !important;
+    margin-bottom: 10vh !important;
+  } */
+ }

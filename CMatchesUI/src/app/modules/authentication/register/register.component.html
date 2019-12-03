@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Register</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="my-form"  #registerForm="ngForm" (ngSubmit)="registerUser()">
+
+      <mat-form-field>
+        <mat-label class="label">Firstrname</mat-label>
+        <input id="firstName" class="matInputdata" placeholder="First Name" matInput [(ngModel)]="newUser.firstName" name="FirstName" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Lastname</mat-label>
+        <input id="lastName" class="matInputdata" placeholder="Last Name" matInput [(ngModel)]="newUser.lastName" name="LastName" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Use Id</mat-label>
+        <!-- <mat-icon matPrefix>person</mat-icon> -->
+        <input id="userId" class="matInputdata"  placeholder="User Id" matInput [(ngModel)]="newUser.userId" name="userId" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label class="label">Password</mat-label>
+        <!-- <mat-icon matPrefix>lock</mat-icon> -->
+        <input type="password" id="password" class="matInputdata"  placeholder="Password"  matInput [(ngModel)]="newUser.password" name="password"
+               required />
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="register-user" mat-raised-button color="accent" type="submit"  (click)="registerUser()">
+      Register
+    </button> 
+
+    <button  mat-raised-button color="primary">Clear</button>
+  </mat-card-actions>
+</mat-card>

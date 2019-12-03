@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span [routerLink] = "['matches/all']">Matches</span>
+    <button class="mat-favourite-list" mat-button [routerLink] = "['matches/favouritelist']">Favourite Matches</button>
+    <button class="mat-match-quickview" mat-button [routerLink] = "['matches/quickview']">Quick View</button>
+    <button class="mat-match-recommendation" mat-button [routerLink] = "['matches/matchrecommendation']">Match Recommendation</button>
+    <!-- <button mat-button *ngIf="showLogout"  (click) = "logout()">Logout</button> -->
+    <button mat-button (click) = "logout()">Logout</button>
+</mat-toolbar>

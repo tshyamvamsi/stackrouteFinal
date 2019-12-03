@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Login Page</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="my-form" #loginForm="ngForm" (ngSubmit)="loginUser()" >
+      <mat-form-field>
+        <mat-label class="label">Username</mat-label>
+        <!-- <mat-icon aria-label="Example icon-button with a person icon">person</mat-icon> -->
+        <input id="userId" placeholder="User Id" class="matInputdata" matInput [(ngModel)]="user.userId" name="userId" required minlength="5" maxlength="10"/>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label class="label">Password</mat-label>
+        <!-- <mat-icon aria-label="Example icon-button with a lock icon">lock</mat-icon> -->
+        <input type= "password" placeholder="Password" id= "password" class="matInputdata" matInput [(ngModel)]= "user.password" name="password" required/>
+      </mat-form-field>
+
+      <mat-card-actions>
+        <button class="login-click" 
+          mat-raised-button (click)="loginUser()"> Login </button>
+        <button 
+          class="register-button" 
+          mat-raised-button 
+          [routerLink] = "['/register']" 
+          > Register </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>
