@@ -1,12 +1,8 @@
 package com.stackroute.favouriteservice.exception;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
-@ResponseStatus(code= HttpStatus.CONFLICT, reason = "Match already exists")
 public class MatchAlreadyExistsException extends Exception {
 
-/*	private String message;
+	private String message;
 
 	public MatchAlreadyExistsException(String message) {
 		super(message);
@@ -19,11 +15,20 @@ public class MatchAlreadyExistsException extends Exception {
 
 		return "MatchAlreadyExistsException: [" + message + "]";
 	}
+
+	/**
+	 * @return the message
+	 */
 	public String getMessage() {
 		return message;
 	}
+
+	/**
+	 * @param message
+	 *            the message to set
+	 */
 	public void setMessage(String message) {
 		this.message = message;
-	}*/
+	}
 
 }

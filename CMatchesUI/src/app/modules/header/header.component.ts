@@ -27,7 +27,7 @@ export class HeaderComponent implements OnInit, AfterViewChecked {
     console.log('logout -->');
     this.showLogout = false;
     this.authenticationService.logout();
-    //this.router.navigate(['/login']);
+    this.router.navigate(['/login']);
   }
 
 }

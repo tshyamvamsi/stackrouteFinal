@@ -37,7 +37,7 @@ export class MatchService {
 
     this.matchRecommendationStartpoint='http://localhost:8086/matchrecommendationservice/api/v1/matchservice/';
 
-
+    
 
 
 
@@ -81,9 +81,7 @@ export class MatchService {
    addMatchToFavourite(match){
      this.userId = sessionStorage.getItem(USER_ID);
     console.log('inside match service... ready to send match data to server....', match);
-    return this.http.post(this.springappEndpoint + '/' + this.userId + "/match", match, {
-      observe: 'response'
-    });
+    return this.http.post(this.springappEndpoint + '/' + this.userId + "/match", match);
    }
 
 
@@ -178,5 +176,5 @@ export class MatchService {
       this.userId = sessionStorage.getItem(USER_ID);
       return this.http.get<Array<Match>>(this.matchRecommendationStartpoint  + this.userId + "/matchrecommendations");
     }
-
+ 
 }

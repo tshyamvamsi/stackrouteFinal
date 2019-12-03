@@ -17,8 +17,7 @@ describe('Match UI App', () => {
     browser.element(by.css('.register-button')).click();
     expect(browser.getCurrentUrl()).toContain('/register');
     browser.driver.sleep(2000);
-  });  
-
+  }); 
 
   it('should be able to register user', () => {
     browser.element(by.id('firstName')).sendKeys('super');
@@ -26,7 +25,6 @@ describe('Match UI App', () => {
     browser.element(by.id('userId')).sendKeys('super');
     browser.element(by.id('password')).sendKeys('super');
     browser.element(by.css('.register-user')).click();
-    // expect(browser.getCurrentUrl()).toContain('/login');
     browser.driver.sleep(1000);
   });
 
@@ -39,7 +37,6 @@ describe('Match UI App', () => {
 
 
   it('should able to login and navigate to all matches screen', () => {
-   // browser.element(by.css('.login-click')).click();
     expect(browser.getCurrentUrl()).toContain('/matches/all');
   });
   
@@ -57,13 +54,11 @@ describe('Match UI App', () => {
   });
 
   it('should able to login and navigate to favouritelist matches screen', () => {
-    
     browser.element(by.css('.mat-favourite-list')).click();
     expect(browser.getCurrentUrl()).toContain('matches/favouritelist');
     browser.driver.manage().window().maximize();
     browser.sleep(1000);
    });
-
 
    it('should be able to delete data from WishList', () => {
     browser.driver.sleep(1000);

@@ -24,23 +24,12 @@ export class ThumbnailComponent implements OnInit {
   @Output()
   deleteMatch = new EventEmitter();
 
-  favbuttonToggle:string;
-  name = 'Angular 4';
-  classes = [
-    {
-      name: 'string',
-      level: 'string',
-      code: 'number',
-      favbuttonToggle: '1'
-    }]
-  viewDetails: boolean;
 
-  durationInSeconds = 5;
+
+  viewDetails: boolean;
 
 
   constructor(private matchService: MatchService, private snackBar : MatSnackBar, private dialog: MatDialog) {
-
-    this.favbuttonToggle=this.classes[0].favbuttonToggle
 
   }
 
@@ -55,7 +44,6 @@ export class ThumbnailComponent implements OnInit {
 
     console.log('inside emit ....');
     this.addMatch.emit(this.match);
-    
 
   }
 
@@ -73,13 +61,6 @@ export class ThumbnailComponent implements OnInit {
     console.log('dialog opened ');
     dialogRef.afterClosed().subscribe((result) => {
       console.log('after dialog closed -- result is --- '+result);
-    });
-  }
-
-
-  openSnackBar() {
-    this.snackBar.open("Match already added to favourite.", '',{
-      duration:2000,
     });
   }
 }

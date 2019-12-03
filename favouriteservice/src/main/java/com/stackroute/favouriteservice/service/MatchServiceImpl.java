@@ -28,17 +28,6 @@ public class MatchServiceImpl implements MatchService{
 
 	@Override
 	public boolean saveMatch(Match match) throws MatchAlreadyExistsException {
-		List<Match> fetchMatches = matchRepository.findAll();
-
-		if(fetchMatches != null) {
-
-			for (Match matchObj : fetchMatches) {
-				if (matchObj.getId()== match.getId()) {
-					throw new MatchAlreadyExistsException();
-				}
-			}
-		}
-
 		MatchDTO matchDto = new MatchDTO();
 		matchDto.setUnique_id(match.getUnique_id());
 		matchDto.setTeamOne(match.getTeamOne());
@@ -47,10 +36,10 @@ public class MatchServiceImpl implements MatchService{
 		matchDto.setMatchStarted(match.isMatchStarted());
 		matchDto.setUserId(match.getUserId());
 
-		/*final Optional<Match> matchObj = matchRepository.findById(match.getId());
+		final Optional<Match> matchObj = matchRepository.findById(match.getId());
 		if (matchObj.isPresent()) {
-			throw new MatchAlreadyExistsException();
-		}*/
+			throw new MatchAlreadyExistsException("Could not save match. Match is already exists");
+		}
 		matchRepository.save(match);
 		producer.sendMessageToRabbitMq(matchDto);
 		return true;
